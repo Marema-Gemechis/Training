@@ -12,6 +12,7 @@ import EditCustomer from './components/EditCustomer';
 import EditTraining from './components/EditTraining';
 import Csv from './components/Csv';
 import Timetable from './components/Timetable';
+import Chart from './components/Chart';
 
 function App() {
   const [customers, setCustomers] = useState([]);
@@ -215,6 +216,7 @@ function App() {
           <Tab label="Customers" />
           <Tab label="Trainings" />
           <Tab label="Calendar" />
+          <Tab label="Statistics" />
         </Tabs>
       </Box>
       {value === 0 && (
@@ -240,6 +242,9 @@ function App() {
       )}
       {value === 2 && (
         <div>{trainings.length > 0 && <Timetable data={trainings} />}</div>
+      )}
+      {value === 3 && (
+        <div>{trainings.length > 0 && <Chart data={trainings} />}</div>
       )}
     </Box>
   );
